@@ -1,0 +1,5 @@
+# Ignored files
+api_keys.py
+
+# Ignored directories
+img/
