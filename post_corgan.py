@@ -4,15 +4,8 @@ import tweepy
 import time
 import shutil
 import pathlib
-from api_keys import consumer_key, consumer_secret, access_token, access_token_secret
+from auth import api, user
 
-
-# Set up API variable, pass api keys into it to authenticate tweepy
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
-
-api = tweepy.API(auth)
-user = api.me()
 
 # Get random image from /img folder inside project directory
 

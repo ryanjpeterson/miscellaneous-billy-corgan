@@ -2,13 +2,7 @@ import tweepy
 import time
 from api_keys import consumer_key, consumer_secret, access_token, access_token_secret
 from util import limit_handler
-
-# Set up API variable, pass api keys into it to authenticate tweepy
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
-
-api = tweepy.API(auth, wait_on_rate_limit=True)
-user = api.me()
+from auth import api, user
 
 
 # Pass in array of strings to search, limit of tweets to search
@@ -43,6 +37,6 @@ def print_my_likes():
         i += 1
 
 
-like_tweets(['smashing pumpkins', '90s guitar', 'billy corgan'], 25)
+like_tweets([], 25)
 # unlike_my_likes(175)
 # print_my_likes()
